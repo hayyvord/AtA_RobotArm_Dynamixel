@@ -1,0 +1,9 @@
+c:\users\александър\documents\visual studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\bin\Debug\AtA_RobotArm_Dynamixel_280316.exe.config
+c:\users\александър\documents\visual studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\bin\Debug\AtA_RobotArm_Dynamixel_280316.exe
+c:\users\александър\documents\visual studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\bin\Debug\AtA_RobotArm_Dynamixel_280316.pdb
+c:\users\александър\documents\visual studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\obj\Debug\AtA_RobotArm_Dynamixel_280316.Properties.Resources.resources
+c:\users\александър\documents\visual studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\obj\Debug\AtA_RobotArm_Dynamixel_280316.csproj.GenerateResource.Cache
+c:\users\александър\documents\visual studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\obj\Debug\AtA_RobotArm_Dynamixel_280316.exe
+c:\users\александър\documents\visual studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\obj\Debug\AtA_RobotArm_Dynamixel_280316.pdb
+c:\users\александър\documents\visual studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\obj\Debug\AtA_RobotArm_Dynamixel_280316.Form1.resources
+C:\Users\Александър\Documents\Visual Studio 2013\Projects\AtA_RobotArm_Dynamixel_280316\AtA_RobotArm_Dynamixel_280316\obj\Debug\AtA_RobotArm_Dynamixel_280316.csprojResolveAssemblyReference.cache
