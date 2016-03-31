@@ -16,7 +16,7 @@ namespace AtA_RobotArm_Dynamixel_280316
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new RobotForm());
         }
     }
 }

@@ -9,17 +9,65 @@ namespace AtA_RobotArm_Dynamixel_280316
 {
     public class Controller
     {
+
         #region Varibles
 
+        #region Servo Index
+        /// <summary>
+        /// Base index.
+        /// </summary>
+        private int Base = 1;
+
+        /// <summary>
+        /// Soulder index.
+        /// </summary>
+        private int Shoulder = 2;
+
+        /// <summary>
+        /// Elbow index.
+        /// </summary>
+        private int Elbow = 3;
+        
+        /// <summary>
+        /// Wrist index.
+        /// </summary>
+        private int Wirst = 4;
+
+        #endregion
+
+        #region Servo Positions
+        
+        /// <summary>
+        /// Base position.
+        /// </summary>
+        private int posBase = 0;
+        
+        /// <summary>
+        /// Shoulder position.
+        /// </summary>
+        private int posShoulder = 0;
+
+        /// <summary>
+        /// Elbow position.
+        /// </summary>
+        private int posElbow = 0;
+        
+        /// <summary>
+        /// Wirst position.
+        /// </summary>
+        private int posWirst = 0;
+        
+        #endregion
+       
         /// <summary>
         /// Number of port.
         /// </summary>
         private int port = 0;
 
         /// <summary>
-        /// Index.
+        /// isConnected.
         /// </summary>
-        int index = 0;
+        private bool isConnected = false;
 
         #endregion
 
@@ -142,6 +190,7 @@ namespace AtA_RobotArm_Dynamixel_280316
         #endregion
 
         #region Constructor
+     
         /// <summary>
         /// Dynamixel.
         /// </summary>
@@ -150,39 +199,43 @@ namespace AtA_RobotArm_Dynamixel_280316
         public Controller(int port)
         {
             this.port = port;
-          
+
             if (dxl_initialize(this.port, 1000000) == 0)
             {
-                Console.WriteLine("Ne staa");
+                this.isConnected = false;
+                Console.WriteLine(this.isConnected);
             }
             else
             {
-                Console.WriteLine("staa");
+                this.isConnected = true;
+                Console.WriteLine(this.isConnected);
             }
         }
-        #endregion
-      
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="position"></param>
-        public void DriveServo()
-        {
-            byte[] ID = new byte[] {1,2,3,4};
-            int[] POS = new int[] { 512,512,512,512 };
 
-            for (int i = 0; i <= POS.Length; i++)
+        #endregion
+
+        /// <summary>
+        /// Servo controller.
+        /// </summary>
+        /// <param name="posBase"></param>
+        /// <param name="posShoulder"></param>
+        /// <param name="posElbow"></param>
+        /// <param name="posWirst"></param>
+        public void Servo(int servoNumber, int value)
+        {
+            if (this.isConnected)
             {
-                dxl_set_txpacket_id(ID[i]);
-                dxl_set_txpacket_length(5);
-                dxl_set_txpacket_instruction(ServoVaribles.INST_WRITE);
-                dxl_set_txpacket_parameter(0, ServoVaribles.GOAL_POSITION);
-                dxl_set_txpacket_parameter(1, (byte)(POS[i] & 0xFF));
-                dxl_set_txpacket_parameter(2, (byte)((POS[i] & 0xFF00) / 0x100));
-                dxl_tx_packet();
+                Servo currentServo = new Servo(servoNumber);
+                int valueToDeg = this.PosToDeg(value);
+                currentServo.MoveServo(valueToDeg);
             }
         }
-    
+
+        private int PosToDeg(int deg)
+        {
+            return (1023 * deg) / 300;
+        }
+
+
     }
 }
